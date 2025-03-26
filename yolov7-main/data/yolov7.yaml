@@ -1,0 +1,10 @@
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ../data/CEG5303_Project1.v1i.yolov7pytorch/train/images/
+val: ../data/CEG5303_Project1.v1i.yolov7pytorch/valid/images/
+test: ../data/CEG5303_Project1.v1i.yolov7pytorch/test/images/
+
+# number of classes
+nc: 20
+
+# class names
+names: ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
