@@ -23,9 +23,9 @@ pip install -r requirements.txt
 ### Training
 1. run 
 ```python
-python train.py --workers 8 --device 0 --batch-size 32 --data data/yolov7.yaml --img 640 640 --cfg cfg/training/yolov7_voc.yaml --weights yolov7.pt --name yolov7_output -hyp data/hyp.scratch.custom.yaml 
+python train.py --workers 4 --device 0 --batch-size 32 --data data/yolov7.yaml --img 640 640 --cfg cfg/training/yolov7_voc.yaml --weights yolov7.pt --name yolov7_output --hyp data/hyp.scratch.custom.yaml
 ```
-‘device’ – cpu or gpu (0,1, etc); ‘name’ indicates the trained output name.\
+‘device’ – 'cpu' or gpu (0,1, etc); ‘name’ indicates the trained output name.\
 If there is error, you can try to delete the cache files in the dataset folder.
 
 ### Testing
