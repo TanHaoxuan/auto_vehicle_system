@@ -6,8 +6,8 @@ from gpt4all import GPT4All
 # Available models (You can modify this list)
 MODEL_OPTIONS = [
     "orca-mini-3b-gguf2-q4_0.gguf",
-    "mistral-7b-instruct-v0.1.Q4_K.gguf",
-    "llama-2-7b-chat.ggmlv3.q4_0"
+    "wizardlm-13b-v1.2.Q4_0.gguf",
+    "mistral-7b-openorca.Q4_0.gguf"
 ]
 
 # Initialize the main application window
@@ -21,8 +21,8 @@ def generate_response():
     user_text = input_text.get("1.0", tk.END).strip()
     if user_text:
         selected_model = model_var.get()
-        model = GPT4All(selected_model, device="cpu")  # Running on CPU
-        response = model.generate(user_text, max_tokens=100000)
+        model = GPT4All(selected_model, device="cpu", allow_download = True)  # Running on CPU
+        response = model.generate(user_text, max_tokens=100000, temp=0.7, repeat_penalty=1.2)
         
         output_text.insert(tk.END, f"You: {user_text}\n", "user")
         output_text.insert(tk.END, f"Bot: {response}\n\n", "bot")
